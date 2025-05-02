@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:lim_app/page/P300CAL/P300CALVAR.dart';
+import 'package:lim_app/page/P99SELECTINSBP12/P99SELECTINSBP12MAIN.dart';
 import '../../data/global.dart';
 import '../../page/P310BP12BALANCE01CAL/P310BP12BALANCE01CALVAR.dart';
 import '../../widget/common/Loading.dart';
@@ -43,6 +44,7 @@ class P99SELECTINSBP12MAIN_Bloc extends Bloc<P99SELECTINSBP12MAIN_Bloc_Event,
       Emitter<List<P99SELECTINSBP12MAINclass>> emit) async {
     List<P99SELECTINSBP12MAINclass> output = [];
     //-------------------------------------------------------------------------------------
+    FreeLoading(P99SELECTINSBP12MAINcontext);
     print('test');
     final response = await Dio().post(
       "http://172.23.10.51:2600/GetDataCal",
@@ -71,6 +73,7 @@ class P99SELECTINSBP12MAIN_Bloc extends Bloc<P99SELECTINSBP12MAIN_Bloc_Event,
       // output = [];
       // emit(output);
     }
+    Navigator.of(P99SELECTINSBP12MAINcontext).pop();
   }
 
   Future<void> _P99SELECTINSBP12MAIN_Bloc_GET2(

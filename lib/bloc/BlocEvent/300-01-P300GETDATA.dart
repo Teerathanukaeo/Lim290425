@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:lim_app/page/P300CAL/P300CALVAR.dart';
 import '../../data/global.dart';
+import '../../page/P300CAL/P300CALMAIN.dart';
 import '../../page/P310BP12BALANCE01CAL/P310BP12BALANCE01CALVAR.dart';
 import '../../widget/common/Loading.dart';
 
@@ -49,6 +50,7 @@ class P300BP12BALANCEGETCALDATA_Bloc extends Bloc<
     List<P300BP12BALANCEGETCALDATAclass> output = [];
     //-------------------------------------------------------------------------------------
     // print('test');
+    FreeLoading(P300CALMAINcontext);
     final response = await Dio().post(
       "http://172.23.10.51:2600/GetDataCal",
       data: {
@@ -77,6 +79,7 @@ class P300BP12BALANCEGETCALDATA_Bloc extends Bloc<
       // output = [];
       // emit(output);
     }
+    Navigator.of(P300CALMAINcontext).pop();
   }
 
   Future<void> _P300BP12BALANCEGETCALDATA_Bloc_GET2(

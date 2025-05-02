@@ -15,6 +15,8 @@ import '../page41.dart';
 import '../page51.dart';
 import '../page56.dart';
 
+late BuildContext P99SELECTINSBP12MAINcontext;
+
 class P99SELECTINSBP12MAIN extends StatefulWidget {
   P99SELECTINSBP12MAIN({
     super.key,
@@ -38,6 +40,7 @@ class _P99SELECTINSBP12MAINState extends State<P99SELECTINSBP12MAIN> {
 
   @override
   Widget build(BuildContext context) {
+    P99SELECTINSBP12MAINcontext = context;
     return Row(
       children: [
         Column(

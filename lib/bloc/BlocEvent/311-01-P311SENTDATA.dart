@@ -56,6 +56,7 @@ class P311BP12BALANCECALDATA_Bloc extends Bloc<P311BP12BALANCECALDATA_Event,
       Emitter<List<P311BP12BALANCECALDATAclass>> emit) async {
     List<P311BP12BALANCECALDATAclass> output = [];
     //-------------------------------------------------------------------------------------
+    FreeLoading(P310BP12BALANCE01CALMAINcontext);
     print('test');
     final response = await Dio().post(
       "http://172.23.10.51:2600/SendDataCal",
@@ -111,6 +112,7 @@ class P311BP12BALANCECALDATA_Bloc extends Bloc<P311BP12BALANCECALDATA_Event,
     // output = [];
     // emit(output);
     // }
+    Navigator.of(P311BP12BALANCE03CALMAINcontext).pop();
   }
 
   Future<void> _P311BP12BALANCECALDATA_GET2(

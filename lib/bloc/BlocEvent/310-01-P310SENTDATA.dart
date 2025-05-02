@@ -87,29 +87,25 @@ class P310BP12BALANCECALDATA_Bloc extends Bloc<P310BP12BALANCECALDATA_Event,
     );
 
     print("1");
-    // var input = [];
-    // if (response.statusCode == 200) {
-    //   print(response.statusCode);
-    //   print(response.data);
-    //   var databuff = response.data;
-    //   input = databuff;
+    var input = [];
+    if (response.statusCode == 200) {
+      print(response.statusCode);
+      print(response.data);
+      var databuff = response.data;
+      input = databuff;
 
-    //   // var input = dummyCusService;
-
-    //   // List<P310BP12BALANCECALDATAclass> outputdata = input.map((data) {
-    //   //   return P310BP12BALANCECALDATAclass(
-    //   //     TYPE: 'Group ${savenull(data['Type'])}',
-    //   //   );
-    //   // }).toList();
-    //   print(databuff);
-    //   output = databuff;
-    //   emit(output);
-
-    // } else {
-    //   print("where is my server");
-    // output = [];
-    // emit(output);
-    // }
+      List<P310BP12BALANCECALDATAclass> outputdata = input.map((data) {
+        return P310BP12BALANCECALDATAclass(
+          GETVALUE: data['value'],
+        );
+      }).toList();
+      output = databuff;
+      emit(output);
+    } else {
+      print("where is my server");
+      output = [];
+      emit(output);
+    }
   }
 
   Future<void> _P310BP12BALANCECALDATA_GET2(

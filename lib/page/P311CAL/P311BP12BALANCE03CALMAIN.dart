@@ -373,9 +373,6 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
             icon: Icon(Icons.save_as), // ปุ่ม Save
             onPressed: () {
               // 1. ส่ง Event ไปยัง Bloc
-              context
-                  .read<P311BP12BALANCECALDATA_Bloc>()
-                  .add(P311BP12BALANCECALDATA_GET3());
 
               // 2. แสดง Popup Dialog ทันที
               showDialog(
@@ -389,6 +386,9 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                         child: Text("OK"),
                         onPressed: () {
                           Navigator.of(context).pop(); // ปิด dialog
+                          context
+                              .read<P311BP12BALANCECALDATA_Bloc>()
+                              .add(P311BP12BALANCECALDATA_GET3());
                         },
                       ),
                     ],
@@ -401,9 +401,6 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
             icon: Icon(Icons.refresh_rounded), // ปุ่ม Clear
             onPressed: () {
               // 1. ส่ง Event เคลียร์ข้อมูลชั่วคราว
-              context
-                  .read<P311BP12BALANCECALDATA_Bloc>()
-                  .add(P311BP12BALANCECALDATA_GET5());
 
               // 2. แสดง Popup Dialog ยืนยัน
               showDialog(
@@ -417,6 +414,9 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                         child: Text("OK"),
                         onPressed: () {
                           Navigator.of(context).pop(); // ปิด dialog
+                          context
+                              .read<P311BP12BALANCECALDATA_Bloc>()
+                              .add(P311BP12BALANCECALDATA_GET5());
                         },
                       ),
                     ],
@@ -2082,10 +2082,6 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                         padding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       ),
-                      // ถ้า buttonCondition เป็น 0 จะทำให้ปุ่มไม่สามารถกดได้
-                      onLongPress: P311BP12BALANCE03CALVAR.averageValue == 0
-                          ? null
-                          : () {}, // กดปุ่มระยะยาวไม่ได้ถ้าเงื่อนไขเป็น 0
                     ),
                   ],
                 ),

@@ -1,12 +1,15 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 //--------------------------------------------- Bloc
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../bloc/BlocEvent/310-01-P310SENTDATA.dart';
 import '../bloc/BlocEvent/LoginEvent.dart';
 import '../bloc/cubit/Rebuild.dart';
 import '../mainBody.dart';
 import '../widget/common/ComInputText.dart';
 import '../data/global.dart';
+import 'P300CAL/P300CALVAR.dart';
 
 class LoginPageWidget extends StatelessWidget {
   const LoginPageWidget({Key? key}) : super(key: key);
@@ -119,9 +122,28 @@ class _LoginSignin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: () {
-          // BlocProvider.of<SwPageCubit>(context).togglePage("Page1");
-          LoginContext.read<Login_Bloc>().add(LoginPage());
+        onTap: () async {
+          // เรียก API
+          final response = await Dio().post(
+            "http://172.23.10.51:2600/GetDataCal",
+            data: {
+              "DateTime": P300CALVAR.timefornodered,
+            },
+          );
+
+          // ตรวจสอบสถานะการตอบกลับ
+          if (response.statusCode == 200) {
+            var input = [];
+            if (response.statusCode == 200) {
+              // print(response.statusCode);
+              // print(response.data);
+              // print(response.data[0]['Refresh']);
+              P300CALVAR.Refresh = response.data[0]['Refresh'];
+            }
+
+            // เรียก event เพื่อเปลี่ยนหน้าใน Bloc
+            LoginContext.read<Login_Bloc>().add(LoginPage());
+          }
         },
         child: Container(
           height: 40,
