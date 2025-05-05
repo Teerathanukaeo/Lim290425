@@ -385,10 +385,11 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                       TextButton(
                         child: Text("OK"),
                         onPressed: () {
-                          Navigator.of(context).pop(); // ปิด dialog
                           context
                               .read<P311BP12BALANCECALDATA_Bloc>()
                               .add(P311BP12BALANCECALDATA_GET3());
+                          Navigator.of(P311BP12BALANCE03CALMAINcontext)
+                              .pop(); // ปิด dialog
                         },
                       ),
                     ],
@@ -413,10 +414,10 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                       TextButton(
                         child: Text("OK"),
                         onPressed: () {
-                          Navigator.of(context).pop(); // ปิด dialog
                           context
                               .read<P311BP12BALANCECALDATA_Bloc>()
                               .add(P311BP12BALANCECALDATA_GET5());
+                          Navigator.of(context).pop(); // ปิด dialog
                         },
                       ),
                     ],
