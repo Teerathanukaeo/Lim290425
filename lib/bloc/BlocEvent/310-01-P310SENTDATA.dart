@@ -57,7 +57,7 @@ class P310BP12BALANCECALDATA_Bloc extends Bloc<P310BP12BALANCECALDATA_Event,
     //-------------------------------------------------------------------------------------
     print('test');
     final response = await Dio().post(
-      "http://172.23.10.51:2600/SendDataCal",
+      "${serverNRBP12}SendDataCal",
       data: {
         "DateTime": P300CALVAR.timefornodered,
         "UserLogin": USERDATA.NAME,
@@ -86,26 +86,26 @@ class P310BP12BALANCECALDATA_Bloc extends Bloc<P310BP12BALANCECALDATA_Event,
       },
     );
 
-    print("1");
-    var input = [];
-    if (response.statusCode == 200) {
-      print(response.statusCode);
-      print(response.data);
-      var databuff = response.data;
-      input = databuff;
+    // print("1");
+    // var input = [];
+    // if (response.statusCode == 200) {
+    //   print(response.statusCode);
+    //   print(response.data);
+    //   var databuff = response.data;
+    //   input = databuff;
 
-      List<P310BP12BALANCECALDATAclass> outputdata = input.map((data) {
-        return P310BP12BALANCECALDATAclass(
-          GETVALUE: data['value'],
-        );
-      }).toList();
-      output = databuff;
-      emit(output);
-    } else {
-      print("where is my server");
-      output = [];
-      emit(output);
-    }
+    //   List<P310BP12BALANCECALDATAclass> outputdata = input.map((data) {
+    //     return P310BP12BALANCECALDATAclass(
+    //       GETVALUE: data['value'],
+    //     );
+    //   }).toList();
+    //   output = databuff;
+    //   emit(output);
+    // } else {
+    //   print("where is my server");
+    //   output = [];
+    //   emit(output);
+    // }
   }
 
   Future<void> _P310BP12BALANCECALDATA_GET2(
@@ -115,7 +115,7 @@ class P310BP12BALANCECALDATA_Bloc extends Bloc<P310BP12BALANCECALDATA_Event,
     //-------------------------------------------------------------------------------------
     FreeLoading(P310BP12BALANCE01CALMAINcontext);
     final response = await Dio().post(
-      "http://172.23.10.51:2600/GETVALUE01",
+      "${serverNRBP12}GETVALUE01",
       data: {},
     );
     var input = [];
@@ -133,7 +133,6 @@ class P310BP12BALANCECALDATA_Bloc extends Bloc<P310BP12BALANCECALDATA_Event,
       output = outputdata;
       emit(output);
       Navigator.of(P310BP12BALANCE01CALMAINcontext).pop();
-      print('Bloc Event ส่งให้ :' + output[0].GETVALUE.toString());
     } else {
       output = [];
       emit(output);
@@ -146,7 +145,7 @@ class P310BP12BALANCECALDATA_Bloc extends Bloc<P310BP12BALANCECALDATA_Event,
     List<P310BP12BALANCECALDATAclass> output = [];
     print('SentTemp');
     final response = await Dio().post(
-      "http://172.23.10.51:2600/SendDataTemp",
+      "${serverNRBP12}SendDataTemp",
       data: {
         "DateTime": P300CALVAR.timefornodered,
         "UserLogin": USERDATA.NAME,
@@ -208,7 +207,7 @@ class P310BP12BALANCECALDATA_Bloc extends Bloc<P310BP12BALANCECALDATA_Event,
     List<P310BP12BALANCECALDATAclass> output = [];
     print('GetTemp');
     final response = await Dio().post(
-      "http://172.23.10.51:2600/GetDataTemp",
+      "${serverNRBP12}GetDataTemp",
       data: {P310BP12BALANCE01CALVAR.InstrumentName},
     );
     var input = [];
@@ -256,7 +255,7 @@ class P310BP12BALANCECALDATA_Bloc extends Bloc<P310BP12BALANCECALDATA_Event,
     List<P310BP12BALANCECALDATAclass> output = [];
     print('GetTemp');
     final response = await Dio().post(
-      "http://172.23.10.51:2600/ClearDataTemp",
+      "${serverNRBP12}ClearDataTemp",
       data: {P310BP12BALANCE01CALVAR.InstrumentName},
     );
     var input = [];

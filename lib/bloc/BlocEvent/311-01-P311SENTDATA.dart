@@ -56,10 +56,9 @@ class P311BP12BALANCECALDATA_Bloc extends Bloc<P311BP12BALANCECALDATA_Event,
       Emitter<List<P311BP12BALANCECALDATAclass>> emit) async {
     List<P311BP12BALANCECALDATAclass> output = [];
     //-------------------------------------------------------------------------------------
-    FreeLoading(P310BP12BALANCE01CALMAINcontext);
     print('test');
     final response = await Dio().post(
-      "http://172.23.10.51:2600/SendDataCal",
+      "${serverNRBP12}SendDataCal",
       data: {
         "DateTime": P300CALVAR.timefornodered,
         "UserLogin": USERDATA.NAME,
@@ -112,7 +111,6 @@ class P311BP12BALANCECALDATA_Bloc extends Bloc<P311BP12BALANCECALDATA_Event,
     // output = [];
     // emit(output);
     // }
-    Navigator.of(P311BP12BALANCE03CALMAINcontext).pop();
   }
 
   Future<void> _P311BP12BALANCECALDATA_GET2(
@@ -122,7 +120,7 @@ class P311BP12BALANCECALDATA_Bloc extends Bloc<P311BP12BALANCECALDATA_Event,
     //-------------------------------------------------------------------------------------
     FreeLoading(P311BP12BALANCE03CALMAINcontext);
     final response = await Dio().post(
-      "http://172.23.10.51:2600/GETVALUE03",
+      "${serverNRBP12}GETVALUE03",
       data: {},
     );
     var input = [];
@@ -153,7 +151,7 @@ class P311BP12BALANCECALDATA_Bloc extends Bloc<P311BP12BALANCECALDATA_Event,
     List<P311BP12BALANCECALDATAclass> output = [];
     print('SentTemp');
     final response = await Dio().post(
-      "http://172.23.10.51:2600/SendDataTemp",
+      "${serverNRBP12}SendDataTemp",
       data: {
         "DateTime": P300CALVAR.timefornodered,
         "UserLogin": USERDATA.NAME,
@@ -215,7 +213,7 @@ class P311BP12BALANCECALDATA_Bloc extends Bloc<P311BP12BALANCECALDATA_Event,
     List<P311BP12BALANCECALDATAclass> output = [];
     print('GetTemp');
     final response = await Dio().post(
-      "http://172.23.10.51:2600/GetDataTemp",
+      "${serverNRBP12}GetDataTemp",
       data: {P311BP12BALANCE03CALVAR.InstrumentName},
     );
     var input = [];
@@ -263,7 +261,7 @@ class P311BP12BALANCECALDATA_Bloc extends Bloc<P311BP12BALANCECALDATA_Event,
     List<P311BP12BALANCECALDATAclass> output = [];
     print('GetTemp');
     final response = await Dio().post(
-      "http://172.23.10.51:2600/ClearDataTemp",
+      "${serverNRBP12}ClearDataTemp",
       data: {P311BP12BALANCE03CALVAR.InstrumentName},
     );
     var input = [];

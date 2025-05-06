@@ -1,3 +1,4 @@
-2025/04/29-08:37:52.696 11b8c Reusing MANIFEST C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.b41f7ead\flutter_tools_chrome_device.bf4f1ddd\Default\Local Storage\leveldb/MANIFEST-000001
-2025/04/29-08:37:52.711 11b8c Recovering log #3
-2025/04/29-08:37:52.727 11b8c Reusing old log C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.b41f7ead\flutter_tools_chrome_device.bf4f1ddd\Default\Local Storage\leveldb/000003.log 
+2025/05/05-16:50:09.872 305c0 Reusing MANIFEST C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.5242fe84\flutter_tools_chrome_device.245b3028\Default\Local Storage\leveldb/MANIFEST-000001
+2025/05/05-16:50:09.890 305c0 Recovering log #3
+2025/05/05-16:50:09.890 305c0 (ignoring error) C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.5242fe84\flutter_tools_chrome_device.245b3028\Default\Local Storage\leveldb/000003.log: dropping 23289 bytes; Corruption: missing start of fragmented record(2)
+2025/05/05-16:50:09.906 305c0 Reusing old log C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.5242fe84\flutter_tools_chrome_device.245b3028\Default\Local Storage\leveldb/000003.log 

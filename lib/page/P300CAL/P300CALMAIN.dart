@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lim_app/page/P300CAL/P300CALVAR.dart';
@@ -8,6 +9,7 @@ import '../../bloc/BlocEvent/310-01-P310SENTDATA.dart';
 import '../../bloc/BlocEvent/ChangePageEvent.dart';
 import '../../data/global.dart';
 import '../../mainBody.dart';
+import '../../widget/common/Loading.dart';
 import '../P311CAL/P311BP12BALANCE03CALVAR.dart';
 import '../page1.dart';
 import '../page11.dart';
@@ -36,9 +38,36 @@ class _P300CALMAINState extends State<P300CALMAIN> {
   @override
   void initState() {
     super.initState();
-    context
-        .read<P300BP12BALANCEGETCALDATA_Bloc>()
-        .add(P300BP12BALANCEGETCALDATA_Bloc_GET());
+    getRefreshData(); // เรียกใช้ async function ที่ดึง API
+  }
+
+  void getRefreshData() async {
+    try {
+      final response = await Dio().post(
+        "${serverNRBP12}GetDataCal",
+        data: {
+          "DateTime": P300CALVAR.timefornodered,
+        },
+      );
+
+      if (response.statusCode == 200) {
+        var input = response.data;
+        List<P300BP12BALANCEGETCALDATAclass> outputdata =
+            input.map<P300BP12BALANCEGETCALDATAclass>((data) {
+          return P300BP12BALANCEGETCALDATAclass(
+            REFRESH: '${data['Refresh']}',
+          );
+        }).toList();
+
+        if (outputdata.isNotEmpty) {
+          setState(() {
+            P300CALVAR.Refresh = outputdata.first.REFRESH;
+          });
+        }
+      }
+    } catch (e) {
+      print("Error fetching Refresh data: $e");
+    }
   }
 
   @override

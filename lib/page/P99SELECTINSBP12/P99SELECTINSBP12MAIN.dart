@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lim_app/bloc/BlocEvent/99-01-P99SELECTINSBP12MAIN.dart';
@@ -32,10 +33,37 @@ class _P99SELECTINSBP12MAINState extends State<P99SELECTINSBP12MAIN> {
   @override
   void initState() {
     super.initState();
-    context
-        .read<P99SELECTINSBP12MAIN_Bloc>()
-        .add(P99SELECTINSBP12MAIN_Bloc_GET());
+    getRefreshData(); // เรียกใช้ async function ที่ดึง API
     USERDATA.INSMASTER = '';
+  }
+
+  void getRefreshData() async {
+    try {
+      final response = await Dio().post(
+        "${serverNRBP12}GetDataCal",
+        data: {
+          "DateTime": P300CALVAR.timefornodered,
+        },
+      );
+
+      if (response.statusCode == 200) {
+        var input = response.data;
+        List<P300BP12BALANCEGETCALDATAclass> outputdata =
+            input.map<P300BP12BALANCEGETCALDATAclass>((data) {
+          return P300BP12BALANCEGETCALDATAclass(
+            REFRESH: '${data['Refresh']}',
+          );
+        }).toList();
+
+        if (outputdata.isNotEmpty) {
+          setState(() {
+            P300CALVAR.Refresh = outputdata.first.REFRESH;
+          });
+        }
+      }
+    } catch (e) {
+      print("Error fetching Refresh data: $e");
+    }
   }
 
   @override

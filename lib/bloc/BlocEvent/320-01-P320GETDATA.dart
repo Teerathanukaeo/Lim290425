@@ -48,7 +48,7 @@ class P320BP12BALANCEDATALOG_Bloc extends Bloc<P320BP12BALANCEDATALOG_Event,
     List<P320BP12BALANCEDATALOGclass> output = [];
     //-------------------------------------------------------------------------------------
     final response = await Dio().post(
-      "http://172.23.10.51:2600/GETDATALOG",
+      "${serverNRBP12}/GETDATALOG",
       data: {
         "DateTime": P300CALVAR.timefornodered,
         "InstrumentName": P320CALDATALOGVAR.InstrumentName,

@@ -46,7 +46,7 @@ class P340BP_EXPORT_EXCEL_Bloc
     List<P340BP_EXPORT_EXCELclass> output = [];
     //-------------------------------------------------------------------------------------
     final response = await Dio().post(
-      "http://172.23.10.51:2600/GETDATAEXPORTEXCEL",
+      "${serverNRBP12}/GETDATAEXPORTEXCEL",
       data: {
         "DateTime": P300CALVAR.timefornodered,
         "InstrumentName": P320CALDATALOGVAR.InstrumentName,

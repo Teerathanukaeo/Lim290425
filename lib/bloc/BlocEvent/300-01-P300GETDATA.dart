@@ -50,36 +50,31 @@ class P300BP12BALANCEGETCALDATA_Bloc extends Bloc<
     List<P300BP12BALANCEGETCALDATAclass> output = [];
     //-------------------------------------------------------------------------------------
     // print('test');
-    FreeLoading(P300CALMAINcontext);
-    final response = await Dio().post(
-      "http://172.23.10.51:2600/GetDataCal",
-      data: {
-        "DateTime": P300CALVAR.timefornodered,
-      },
-    );
-    var input = [];
-    if (response.statusCode == 200) {
-      // print(response.statusCode);
-      // print(response.data);
-      // print(response.data[0]['Refresh']);
-      P300CALVAR.Refresh =
-          response.data[0]['Refresh']; //ครอบ if response.data > 0
-      // var databuff = response.data;
-      // input = databuff;
-      // List<P300BP12BALANCEGETCALDATAclass> outputdata = input.map((data) {
-      //   return P300BP12BALANCEGETCALDATAclass(
-      //     REFRESH: '${data['Refresh']}',
-      //   );
-      // }).toList();
+    // FreeLoading(P300CALMAINcontext);
+    // final response = await Dio().post(
+    //   "${serverNRBP12}GetDataCal",
+    //   data: {
+    //     "DateTime": P300CALVAR.timefornodered,
+    //   },
+    // );
+    // var input = [];
+    // if (response.statusCode == 200) {
+    //   var databuff = response.data;
+    //   input = databuff;
+    //   List<P300BP12BALANCEGETCALDATAclass> outputdata = input.map((data) {
+    //     return P300BP12BALANCEGETCALDATAclass(
+    //       REFRESH: '${data['Refresh']}',
+    //     );
+    //   }).toList();
 
-      // output = outputdata;
-      // emit(output);
-      // print(output);
-    } else {
-      // output = [];
-      // emit(output);
-    }
-    Navigator.of(P300CALMAINcontext).pop();
+    //   output = outputdata;
+    //   emit(output);
+    //   print(output);
+    // } else {
+    //   output = [];
+    //   emit(output);
+    // }
+    // Navigator.of(P300CALMAINcontext).pop();
   }
 
   Future<void> _P300BP12BALANCEGETCALDATA_Bloc_GET2(

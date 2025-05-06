@@ -1,3 +1,7 @@
-2025/05/02-09:24:23.683 73a8 Reusing MANIFEST C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.ae7d9e4e\flutter_tools_chrome_device.3693436f\Default\shared_proto_db/MANIFEST-000001
-2025/05/02-09:24:23.690 73a8 Recovering log #3
-2025/05/02-09:24:23.694 73a8 Reusing old log C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.ae7d9e4e\flutter_tools_chrome_device.3693436f\Default\shared_proto_db/000003.log 
+2025/05/06-08:34:02.814 2ca6c Reusing MANIFEST C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.17c983f6\flutter_tools_chrome_device.b945a940\Default\shared_proto_db/MANIFEST-000001
+2025/05/06-08:34:02.817 2ca6c Recovering log #3
+2025/05/06-08:34:02.817 2ca6c (ignoring error) C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.17c983f6\flutter_tools_chrome_device.b945a940\Default\shared_proto_db/000003.log: dropping 353 bytes; Corruption: missing start of fragmented record(2)
+2025/05/06-08:34:02.822 2ca6c Reusing old log C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.17c983f6\flutter_tools_chrome_device.b945a940\Default\shared_proto_db/000003.log 
+2025/05/06-08:37:07.903 2c468 Level-0 table #5: started
+2025/05/06-08:37:07.918 2c468 Level-0 table #5: 136650 bytes OK
+2025/05/06-08:37:07.925 2c468 Delete type=0 #3

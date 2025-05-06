@@ -1,3 +1,34 @@
-2025/05/02-09:24:15.995 79ec Reusing MANIFEST C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.ae7d9e4e\flutter_tools_chrome_device.3693436f\Default\Local Storage\leveldb/MANIFEST-000001
-2025/05/02-09:24:16.005 79ec Recovering log #3
-2025/05/02-09:24:16.015 79ec Reusing old log C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.ae7d9e4e\flutter_tools_chrome_device.3693436f\Default\Local Storage\leveldb/000003.log 
+2025/05/06-08:34:02.466 310d8 Reusing MANIFEST C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.17c983f6\flutter_tools_chrome_device.b945a940\Default\Local Storage\leveldb/MANIFEST-000001
+2025/05/06-08:34:02.475 310d8 Recovering log #3
+2025/05/06-08:34:02.476 310d8 (ignoring error) C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.17c983f6\flutter_tools_chrome_device.b945a940\Default\Local Storage\leveldb/000003.log: dropping 23289 bytes; Corruption: missing start of fragmented record(2)
+2025/05/06-08:34:02.488 310d8 Reusing old log C:\Users\AUTOMA~1\AppData\Local\Temp\flutter_tools.17c983f6\flutter_tools_chrome_device.b945a940\Default\Local Storage\leveldb/000003.log 
+2025/05/06-08:49:32.282 2f8fc Level-0 table #5: started
+2025/05/06-08:49:32.300 2f8fc Level-0 table #5: 48255 bytes OK
+2025/05/06-08:49:32.307 2f8fc Delete type=0 #3
+2025/05/06-08:59:43.303 2f8fc Level-0 table #7: started
+2025/05/06-08:59:43.325 2f8fc Level-0 table #7: 19836 bytes OK
+2025/05/06-08:59:43.332 2f8fc Delete type=0 #4
+2025/05/06-09:48:25.806 2f8fc Level-0 table #9: started
+2025/05/06-09:48:25.839 2f8fc Level-0 table #9: 65726 bytes OK
+2025/05/06-09:48:25.847 2f8fc Delete type=0 #6
+2025/05/06-10:25:31.345 2f8fc Level-0 table #11: started
+2025/05/06-10:25:31.365 2f8fc Level-0 table #11: 31717 bytes OK
+2025/05/06-10:25:31.372 2f8fc Delete type=0 #8
+2025/05/06-10:53:29.513 2f8fc Level-0 table #13: started
+2025/05/06-10:53:29.527 2f8fc Level-0 table #13: 13834 bytes OK
+2025/05/06-10:53:29.534 2f8fc Delete type=0 #10
+2025/05/06-11:18:03.504 2f8fc Level-0 table #15: started
+2025/05/06-11:18:03.526 2f8fc Level-0 table #15: 18362 bytes OK
+2025/05/06-11:18:03.530 2f8fc Delete type=0 #12
+2025/05/06-11:18:03.535 2f8fc Compacting 4@0 + 1@1 files
+2025/05/06-11:18:03.558 2f8fc Generated table #16@0: 56 keys, 43106 bytes
+2025/05/06-11:18:03.559 2f8fc Compacted 4@0 + 1@1 files => 43106 bytes
+2025/05/06-11:18:03.563 2f8fc compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/05/06-11:18:03.565 2f8fc Delete type=2 #7
+2025/05/06-11:18:03.565 2f8fc Delete type=2 #9
+2025/05/06-11:18:03.565 2f8fc Delete type=2 #11
+2025/05/06-11:18:03.566 2f8fc Delete type=2 #13
+2025/05/06-11:18:03.566 2f8fc Delete type=2 #15
+2025/05/06-11:53:40.531 2f8fc Level-0 table #18: started
+2025/05/06-11:53:40.547 2f8fc Level-0 table #18: 16319 bytes OK
+2025/05/06-11:53:40.552 2f8fc Delete type=0 #14

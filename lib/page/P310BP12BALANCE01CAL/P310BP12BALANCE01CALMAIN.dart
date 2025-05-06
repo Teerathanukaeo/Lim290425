@@ -510,7 +510,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -607,7 +607,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -704,7 +704,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -847,7 +847,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -944,7 +944,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -1041,7 +1041,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -1184,7 +1184,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -1281,7 +1281,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -1378,7 +1378,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -1521,7 +1521,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -1618,7 +1618,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -1715,7 +1715,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE01",
+                                "${serverNRBP12}GETVALUE01",
                                 data: {},
                               );
                               var input = [];
@@ -2030,7 +2030,7 @@ class _P310BP12BALANCE01CALMAINState extends State<P310BP12BALANCE01CALMAIN> {
                   children: [
                     SizedBox(width: 20), // ระยะห่างจากขอบซ้าย
                     ElevatedButton.icon(
-                      onPressed: () {
+                      onPressed: () async {
                         // ตรวจสอบค่า buttonCondition
                         if (P310BP12BALANCE01CALVAR.button1PressCount > 1 &&
                             P310BP12BALANCE01CALVAR.button2PressCount > 1 &&

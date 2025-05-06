@@ -510,7 +510,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];
@@ -607,7 +607,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];
@@ -704,7 +704,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];
@@ -847,7 +847,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];
@@ -944,7 +944,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];
@@ -1041,7 +1041,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];
@@ -1184,7 +1184,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];
@@ -1281,7 +1281,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];
@@ -1378,7 +1378,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];
@@ -1521,7 +1521,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];
@@ -1618,7 +1618,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];
@@ -1715,7 +1715,7 @@ class _P311BP12BALANCE03CALMAINState extends State<P311BP12BALANCE03CALMAIN> {
                                 return;
                               }
                               final response = await Dio().post(
-                                "http://172.23.10.51:2600/GETVALUE03",
+                                "${serverNRBP12}GETVALUE03",
                                 data: {},
                               );
                               var input = [];

@@ -47,7 +47,7 @@ class P99SELECTINSBP12MAIN_Bloc extends Bloc<P99SELECTINSBP12MAIN_Bloc_Event,
     FreeLoading(P99SELECTINSBP12MAINcontext);
     print('test');
     final response = await Dio().post(
-      "http://172.23.10.51:2600/GetDataCal",
+      "${serverNRBP12}GetDataCal",
       data: {
         "DateTime": P300CALVAR.timefornodered,
       },
@@ -57,21 +57,21 @@ class P99SELECTINSBP12MAIN_Bloc extends Bloc<P99SELECTINSBP12MAIN_Bloc_Event,
       // print(response.statusCode);
       // print(response.data);
       // print(response.data[0]['Refresh']);
-      P300CALVAR.Refresh = response.data[0]['Refresh'];
-      // var databuff = response.data;
-      // input = databuff;
-      // List<P99SELECTINSBP12MAINclass> outputdata = input.map((data) {
-      //   return P99SELECTINSBP12MAINclass(
-      //     REFRESH: '${data['Refresh']}',
-      //   );
-      // }).toList();
+      // P300CALVAR.Refresh = response.data[0]['Refresh'];
+      var databuff = response.data;
+      input = databuff;
+      List<P99SELECTINSBP12MAINclass> outputdata = input.map((data) {
+        return P99SELECTINSBP12MAINclass(
+          REFRESH: '${data['Refresh']}',
+        );
+      }).toList();
 
-      // output = outputdata;
-      // emit(output);
-      // print(output);
+      output = outputdata;
+      emit(output);
+      print(output);
     } else {
-      // output = [];
-      // emit(output);
+      output = [];
+      emit(output);
     }
     Navigator.of(P99SELECTINSBP12MAINcontext).pop();
   }
