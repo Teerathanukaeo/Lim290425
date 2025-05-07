@@ -138,7 +138,8 @@ class _LoginSignin extends StatelessWidget {
               // print(response.statusCode);
               // print(response.data);
               // print(response.data[0]['Refresh']);
-              P300CALVAR.Refresh = response.data[0]['Refresh'];
+              P300CALVAR.BA01 = response.data[0]['BA01'];
+              P300CALVAR.BA03 = response.data[0]['BA03'];
             }
 
             // เรียก event เพื่อเปลี่ยนหน้าใน Bloc

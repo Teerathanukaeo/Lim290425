@@ -52,27 +52,27 @@ class P99SELECTINSBP12MAIN_Bloc extends Bloc<P99SELECTINSBP12MAIN_Bloc_Event,
         "DateTime": P300CALVAR.timefornodered,
       },
     );
-    var input = [];
-    if (response.statusCode == 200) {
-      // print(response.statusCode);
-      // print(response.data);
-      // print(response.data[0]['Refresh']);
-      // P300CALVAR.Refresh = response.data[0]['Refresh'];
-      var databuff = response.data;
-      input = databuff;
-      List<P99SELECTINSBP12MAINclass> outputdata = input.map((data) {
-        return P99SELECTINSBP12MAINclass(
-          REFRESH: '${data['Refresh']}',
-        );
-      }).toList();
+    // var input = [];
+    // if (response.statusCode == 200) {
+    //   // print(response.statusCode);
+    //   // print(response.data);
+    //   // print(response.data[0]['Refresh']);
+    //   P300CALVAR.Refresh = response.data[0]['Refresh'];
+    //   var databuff = response.data;
+    //   input = databuff;
+    //   List<P99SELECTINSBP12MAINclass> outputdata = input.map((data) {
+    //     return P99SELECTINSBP12MAINclass(
+    //       REFRESH: '${data['Refresh']}',
+    //     );
+    //   }).toList();
 
-      output = outputdata;
-      emit(output);
-      print(output);
-    } else {
-      output = [];
-      emit(output);
-    }
+    //   output = outputdata;
+    //   emit(output);
+    //   print(output);
+    // } else {
+    //   output = [];
+    //   emit(output);
+    // }
     Navigator.of(P99SELECTINSBP12MAINcontext).pop();
   }
 

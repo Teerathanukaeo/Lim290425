@@ -47,20 +47,22 @@ class _P99SELECTINSBP12MAINState extends State<P99SELECTINSBP12MAIN> {
       );
 
       if (response.statusCode == 200) {
-        var input = response.data;
-        List<P300BP12BALANCEGETCALDATAclass> outputdata =
-            input.map<P300BP12BALANCEGETCALDATAclass>((data) {
-          return P300BP12BALANCEGETCALDATAclass(
-            REFRESH: '${data['Refresh']}',
-          );
-        }).toList();
+        P300CALVAR.BA01 = response.data[0]['BA01'];
+        P300CALVAR.BA03 = response.data[0]['BA03'];
+        // List<P300BP12BALANCEGETCALDATAclass> outputdata =
+        //     input.map<P300BP12BALANCEGETCALDATAclass>((data) {
+        //   return P300BP12BALANCEGETCALDATAclass(
+        //     REFRESH: '${data['Refresh']}',
+        //   );
+        // }).toList();
 
-        if (outputdata.isNotEmpty) {
-          setState(() {
-            P300CALVAR.Refresh = outputdata.first.REFRESH;
-          });
-        }
+        // if (outputdata.isNotEmpty) {
+        //   setState(() {
+        //     P300CALVAR.Refresh = outputdata.first.REFRESH;
+        //   });
+        // }
       }
+      print(P300CALVAR.BA01 = response.data[0]['BA01']);
     } catch (e) {
       print("Error fetching Refresh data: $e");
     }
@@ -76,10 +78,7 @@ class _P99SELECTINSBP12MAINState extends State<P99SELECTINSBP12MAIN> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: P300CALVAR.Refresh.isNotEmpty &&
-                            P300CALVAR.Refresh == '0' ||
-                        P300CALVAR.Refresh.isNotEmpty &&
-                            P300CALVAR.Refresh == '2'
+                onTap: P300CALVAR.BA01.isNotEmpty && P300CALVAR.BA01 == 'NG'
                     ? null
                     : () {
                         USERDATA.INSMASTER = 'BP12BALANCE01';
@@ -106,12 +105,10 @@ class _P99SELECTINSBP12MAINState extends State<P99SELECTINSBP12MAIN> {
                     Container(
                       height: 50,
                       width: 125,
-                      color: P300CALVAR.Refresh.isNotEmpty &&
-                                  P300CALVAR.Refresh == '0' ||
-                              P300CALVAR.Refresh.isNotEmpty &&
-                                  P300CALVAR.Refresh == '2'
-                          ? Colors.red
-                          : Colors.blue,
+                      color:
+                          P300CALVAR.BA01.isNotEmpty && P300CALVAR.BA01 == 'NG'
+                              ? Colors.red
+                              : Colors.blue,
                       // color: Colors.red,
                       child: const Center(
                         child: Text("T 071-002"),
@@ -162,10 +159,7 @@ class _P99SELECTINSBP12MAINState extends State<P99SELECTINSBP12MAIN> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: P300CALVAR.Refresh.isNotEmpty &&
-                            P300CALVAR.Refresh == '0' ||
-                        P300CALVAR.Refresh.isNotEmpty &&
-                            P300CALVAR.Refresh == '1'
+                onTap: P300CALVAR.BA03.isNotEmpty && P300CALVAR.BA03 == 'NG'
                     ? null
                     : () {
                         USERDATA.INSMASTER = 'BP12BALANCE03';
@@ -192,12 +186,10 @@ class _P99SELECTINSBP12MAINState extends State<P99SELECTINSBP12MAIN> {
                     Container(
                       height: 50,
                       width: 125,
-                      color: P300CALVAR.Refresh.isNotEmpty &&
-                                  P300CALVAR.Refresh == '0' ||
-                              P300CALVAR.Refresh.isNotEmpty &&
-                                  P300CALVAR.Refresh == '1'
-                          ? Colors.red
-                          : Colors.blue,
+                      color:
+                          P300CALVAR.BA03.isNotEmpty && P300CALVAR.BA03 == 'NG'
+                              ? Colors.red
+                              : Colors.blue,
                       child: const Center(
                         child: Text("CTC-BAL-002"),
                       ),

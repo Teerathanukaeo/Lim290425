@@ -51,19 +51,20 @@ class _P300CALMAINState extends State<P300CALMAIN> {
       );
 
       if (response.statusCode == 200) {
-        var input = response.data;
-        List<P300BP12BALANCEGETCALDATAclass> outputdata =
-            input.map<P300BP12BALANCEGETCALDATAclass>((data) {
-          return P300BP12BALANCEGETCALDATAclass(
-            REFRESH: '${data['Refresh']}',
-          );
-        }).toList();
+        P300CALVAR.BA01 = response.data[0]['BA01'];
+        P300CALVAR.BA03 = response.data[0]['BA03'];
+        // List<P300BP12BALANCEGETCALDATAclass> outputdata =
+        //     input.map<P300BP12BALANCEGETCALDATAclass>((data) {
+        //   return P300BP12BALANCEGETCALDATAclass(
+        //     REFRESH: '${data['Refresh']}',
+        //   );
+        // }).toList();
 
-        if (outputdata.isNotEmpty) {
-          setState(() {
-            P300CALVAR.Refresh = outputdata.first.REFRESH;
-          });
-        }
+        // if (outputdata.isNotEmpty) {
+        //   setState(() {
+        //     P300CALVAR.Refresh = outputdata.first.REFRESH;
+        //   });
+        // }
       }
     } catch (e) {
       print("Error fetching Refresh data: $e");
@@ -81,10 +82,7 @@ class _P300CALMAINState extends State<P300CALMAIN> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: P300CALVAR.Refresh.isNotEmpty &&
-                            P300CALVAR.Refresh == '3' ||
-                        P300CALVAR.Refresh.isNotEmpty &&
-                            P300CALVAR.Refresh == '1'
+                onTap: P300CALVAR.BA01.isNotEmpty && P300CALVAR.BA01 == 'OK'
                     ? null // ปิดการกดถ้าเงื่อนไขเป็นจริง
                     : () {
                         USERDATA.INSMASTER = 'BP12BALANCE01';
@@ -102,10 +100,7 @@ class _P300CALMAINState extends State<P300CALMAIN> {
                         );
                       },
                 child: Container(
-                  color: P300CALVAR.Refresh.isNotEmpty &&
-                              P300CALVAR.Refresh == '3' ||
-                          P300CALVAR.Refresh.isNotEmpty &&
-                              P300CALVAR.Refresh == '1'
+                  color: P300CALVAR.BA01.isNotEmpty && P300CALVAR.BA01 == 'OK'
                       ? Colors.green
                       : Colors.transparent, // เปลี่ยนสีพื้นหลัง
                   child: Row(
@@ -139,10 +134,7 @@ class _P300CALMAINState extends State<P300CALMAIN> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
-                onTap: P300CALVAR.Refresh.isNotEmpty &&
-                            P300CALVAR.Refresh == '3' ||
-                        P300CALVAR.Refresh.isNotEmpty &&
-                            P300CALVAR.Refresh == '2'
+                onTap: P300CALVAR.BA03.isNotEmpty && P300CALVAR.BA03 == 'OK'
                     ? null // ปิดการกดถ้าเงื่อนไขเป็นจริง
                     : () {
                         USERDATA.INSMASTER = 'BP12BALANCE03';
@@ -160,10 +152,7 @@ class _P300CALMAINState extends State<P300CALMAIN> {
                         );
                       },
                 child: Container(
-                  color: P300CALVAR.Refresh.isNotEmpty &&
-                              P300CALVAR.Refresh == '3' ||
-                          P300CALVAR.Refresh.isNotEmpty &&
-                              P300CALVAR.Refresh == '2'
+                  color: P300CALVAR.BA03.isNotEmpty && P300CALVAR.BA03 == 'OK'
                       ? Colors.green
                       : Colors.transparent, // เปลี่ยนสีพื้นหลัง
                   child: Row(
